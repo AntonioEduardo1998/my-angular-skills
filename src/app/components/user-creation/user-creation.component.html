@@ -1,0 +1,18 @@
+<mat-card class="user-creation">
+  <div class="user-creation__content">
+    <form class="user-creation__form" [formGroup]="userForm" (ngSubmit)="createUser()">
+      <mat-form-field color="accent" class="user-creation__input">
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+      <mat-form-field color="accent" class="user-creation__input">
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field color="accent" class="user-creation__input">
+        <input matInput placeholder="Birthday" formControlName="birthday">
+      </mat-form-field>
+      <footer class="user-creation__form-footer">
+        <button mat-raised-button color="accent" type="submit">Submit</button>
+      </footer>
+    </form>
+  </div>
+</mat-card>

@@ -1,0 +1,19 @@
+<main class="users">
+  <header class="users__header">
+    <a class="users__linkedin" href="https://www.linkedin.com/in/antonio-eduardo-ribeiro-de-oliveira-9a7278127/"
+      target="_blank">My LinkedIn</a>
+    <button mat-raised-button color="accent" (click)="navigateToUserConfig()">Create new user</button>
+  </header>
+  <ul class="users__container">
+    <li *ngFor="let user of users" class="users__card">
+      <mat-card class="users__data data">
+        <div class="data__description">
+          <p>{{user.name}}</p>
+          <p>{{user.email}}</p>
+          <p>{{user.birthday}}</p>
+        </div>
+        <button (click)="navigateToUserConfig(user.id)" mat-button>Edit</button>
+      </mat-card>
+    </li>
+  </ul>
+</main>
