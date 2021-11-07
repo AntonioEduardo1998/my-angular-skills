@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsersComponent } from './pages/users/users.component';
+import { UserDeleteDialogComponent, UsersComponent } from './pages/users/users.component';
 import { SharedModule } from './shared/shared.module';
 import { UserCreateComponent } from './pages/user-create/user-create.component';
 import { UserCreationComponent } from './components/user-creation/user-creation.component';
@@ -15,6 +15,7 @@ import { UserCreationComponent } from './components/user-creation/user-creation.
     UsersComponent,
     UserCreateComponent,
     UserCreationComponent,
+    UserDeleteDialogComponent
   ],
   imports: [
     BrowserModule,

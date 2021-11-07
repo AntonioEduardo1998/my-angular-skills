@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 import User from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
 
@@ -12,7 +13,12 @@ export class UserCreateComponent implements OnInit {
 
   public userId: string;
 
-  constructor(private route: ActivatedRoute, private userService: UserService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private userService: UserService,
+    private _snackBar: MatSnackBar
+  ) { }
 
   public user: User;
   public loading = false;
@@ -27,7 +33,6 @@ export class UserCreateComponent implements OnInit {
   }
 
   public saveUser(user: User): void {
-    console.log(user);
     let users: User[] = JSON.parse(localStorage.getItem('@users'));
     const userExist = users.findIndex(u => u.id === user.id);
     if (!userExist) {
@@ -36,5 +41,16 @@ export class UserCreateComponent implements OnInit {
       users.push(user);
     }
     localStorage.setItem('@users', JSON.stringify(users));
+    this.router.navigate(['']).then(() => {
+      this.openSnackBar('User saved successfully!', 'close');
+    });
+  }
+
+  public openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top'
+    });
   }
 }

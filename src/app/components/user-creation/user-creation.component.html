@@ -7,8 +7,11 @@
       <mat-form-field color="accent" class="user-creation__input">
         <input matInput placeholder="Email" formControlName="email">
       </mat-form-field>
-      <mat-form-field color="accent" class="user-creation__input">
-        <input matInput placeholder="Birthday" formControlName="birthday">
+      <mat-form-field color="accent">
+        <mat-label>Select your birthday</mat-label>
+        <input matInput formControlName="birthday" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <footer class="user-creation__form-footer">
         <button mat-raised-button color="accent" type="submit">Submit</button>

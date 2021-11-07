@@ -28,7 +28,7 @@ export class UserCreationComponent implements OnInit {
     if (this.user) {
       this.userForm.setValue({
         name: this.user.name,
-        birthday: this.user.birthday,
+        birthday: new Date(this.user.birthday),
         email: this.user.email,
       });
     }

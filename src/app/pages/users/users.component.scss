@@ -3,17 +3,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
+
+  .btn {
+    &__delete {
+      margin-right: 10px;
+    }
+  }
+
+  &__mat-progress-bar {
+    z-index: 10;
+    position: fixed;
+  }
 
   &__header {
     width: 100%;
-    height: 60px;
+    height: 50px;
     position: fixed;
     z-index: 5;
     display: flex;
     align-items: center;
-    padding: 0 32px;
+    padding: 34px 32px;
     justify-content: space-between;
     top: 0;
     background-color: hsl(231, 15%, 40%);
@@ -31,7 +42,6 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding-top: 100px;
   }
 
   &__card {
