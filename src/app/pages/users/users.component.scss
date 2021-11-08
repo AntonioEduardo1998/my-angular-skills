@@ -1,23 +1,7 @@
 .users {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
+  padding-top: 90px;
 
-  .btn {
-    &__delete {
-      margin-right: 10px;
-    }
-  }
-
-  &__mat-progress-bar {
-    z-index: 10;
-    position: fixed;
-  }
-
-  &__header {
+  .header {
     width: 100%;
     height: 50px;
     position: fixed;
@@ -28,36 +12,46 @@
     justify-content: space-between;
     top: 0;
     background-color: hsl(231, 15%, 40%);
+
+    &__linkedin {
+      text-decoration: none;
+      color: hsl(0, 0%, 100%);
+    }
   }
 
-  &__linkedin {
-    text-decoration: none;
-    color: hsl(0, 0%, 100%);
-  }
-
-  &__container {
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
+
+    &__card {
+      width: 100%;
+      max-width: 800px;
+
+      .data {
+        background-color: hsl(231, 15%, 30%);
+        color: #fff;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: rgba(255, 64, 129, 0.4) 5px 5px,
+          rgba(255, 64, 129, 0.3) 10px 10px, rgba(255, 64, 129, 0.2) 15px 15px,
+          rgba(255, 64, 129, 0.1) 20px 20px;
+
+        .btn {
+          &__delete {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
   }
 
-  &__card {
-    width: 100%;
-    max-width: 800px;
-
-    .data {
-      background-color: hsl(231, 15%, 30%);
-      color: #fff;
-      margin-bottom: 40px;
-      display: flex;
-      justify-content: space-between;
-
-      box-shadow: rgba(255, 64, 129, 0.4) 5px 5px,
-        rgba(255, 64, 129, 0.3) 10px 10px, rgba(255, 64, 129, 0.2) 15px 15px,
-        rgba(255, 64, 129, 0.1) 20px 20px;
-    }
+  &__mat-progress-bar {
+    z-index: 10;
+    position: fixed;
   }
 }

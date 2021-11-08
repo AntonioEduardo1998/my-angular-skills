@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import User from 'src/app/models/User';
 import { v4 as uuid4 } from 'uuid';
 
@@ -13,9 +13,9 @@ export class UserCreationComponent implements OnInit {
 
   public userForm: FormGroup = new FormGroup(
     {
-      name: new FormControl(''),
-      birthday: new FormControl(''),
-      email: new FormControl(''),
+      name: new FormControl('', [Validators.required]),
+      birthday: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
     }
   );
 
@@ -35,14 +35,15 @@ export class UserCreationComponent implements OnInit {
   }
 
   public createUser(): void {
-    const newUser = this.userForm.getRawValue();
-    if (!this.user?.id) {
-      newUser.id = uuid4();
-    } else {
-      newUser.id = this.user.id;
+    if (this.userForm.valid) {
+      const newUser = this.userForm.getRawValue();
+      if (!this.user?.id) {
+        newUser.id = uuid4();
+      } else {
+        newUser.id = this.user.id;
+      }
+      this.userEmitter.emit(newUser);
     }
-
-    this.userEmitter.emit(newUser);
   }
 
 }

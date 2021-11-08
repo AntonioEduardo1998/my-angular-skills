@@ -35,7 +35,8 @@ export class UserCreateComponent implements OnInit {
   public saveUser(user: User): void {
     let users: User[] = JSON.parse(localStorage.getItem('@users'));
     const userExist = users.findIndex(u => u.id === user.id);
-    if (!userExist) {
+
+    if (userExist >= 0) {
       users[userExist] = user;
     } else {
       users.push(user);
