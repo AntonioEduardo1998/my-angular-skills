@@ -1,25 +1,25 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import User from 'src/app/models/User';
 import { v4 as uuid4 } from 'uuid';
 
+import User from 'src/app/models/User';
 
 @Component({
   selector: 'app-user-creation',
   templateUrl: './user-creation.component.html',
-  styleUrls: ['./user-creation.component.scss']
+  styleUrls: ['./user-creation.component.scss'],
 })
 export class UserCreationComponent implements OnInit {
-
   public userForm: FormGroup = new FormGroup(
     {
       name: new FormControl('', [Validators.required]),
       birthday: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-    }
+    },
   );
 
   @Input() public user: User;
+
   @Output() public userEmitter = new EventEmitter<User>();
 
   constructor() { }
@@ -45,5 +45,4 @@ export class UserCreationComponent implements OnInit {
       this.userEmitter.emit(newUser);
     }
   }
-
 }

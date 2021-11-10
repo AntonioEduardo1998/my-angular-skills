@@ -2,44 +2,43 @@
   padding-top: 90px;
 
   .header {
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    z-index: 5;
-    display: flex;
     align-items: center;
-    padding: 34px 32px;
-    justify-content: space-between;
-    top: 0;
     background-color: hsl(231, 15%, 40%);
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    padding: 34px 32px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
 
     &__linkedin {
-      text-decoration: none;
       color: hsl(0, 0%, 100%);
+      text-decoration: none;
     }
   }
 
   .container {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100%;
     justify-content: center;
     width: 100%;
-    height: 100%;
 
     &__card {
-      width: 100%;
       max-width: 800px;
+      width: 100%;
 
       .data {
         background-color: hsl(231, 15%, 30%);
-        color: #fff;
-        margin-bottom: 40px;
+        box-shadow: rgba(255, 64, 129, 40%) 5px 5px, rgba(255, 64, 129, 30%) 10px 10px,
+          rgba(255, 64, 129, 20%) 15px 15px, rgba(255, 64, 129, 10%) 20px 20px;
+        color: hsl(0, 0%, 100%);
         display: flex;
         justify-content: space-between;
-        box-shadow: rgba(255, 64, 129, 0.4) 5px 5px,
-          rgba(255, 64, 129, 0.3) 10px 10px, rgba(255, 64, 129, 0.2) 15px 15px,
-          rgba(255, 64, 129, 0.1) 20px 20px;
+        margin-bottom: 40px;
 
         .btn {
           &__delete {
@@ -51,7 +50,7 @@
   }
 
   &__mat-progress-bar {
-    z-index: 10;
     position: fixed;
+    z-index: 10;
   }
 }
