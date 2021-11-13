@@ -1,7 +1,7 @@
 .users {
   padding-top: 90px;
 
-  .header {
+  &__header {
     align-items: center;
     background-color: hsl(231, 15%, 40%);
     display: flex;
@@ -12,62 +12,69 @@
     top: 0;
     width: 100%;
     z-index: 5;
-
-    &__linkedin {
-      color: hsl(0, 0%, 100%);
-      text-decoration: none;
-    }
   }
 
-  .container {
+  &__linkedin {
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+  }
+
+  &__container {
     align-items: center;
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: center;
     width: 100%;
+  }
 
-    &__card {
-      max-width: 800px;
-      width: 100%;
+  &__list {
+    max-width: 800px;
+    width: 100%;
+  }
 
-      .data {
-        background-color: hsl(231, 15%, 30%);
-        box-shadow: rgba(255, 64, 129, 40%) 5px 5px,
-          rgba(255, 64, 129, 30%) 10px 10px, rgba(255, 64, 129, 20%) 15px 15px,
-          rgba(255, 64, 129, 10%) 20px 20px;
-        color: hsl(0, 0%, 100%);
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 40px;
+  &__card {
+    background-color: hsl(231, 15%, 30%);
+    box-shadow: hsla(340, 100%, 63%, 40%) 5px 5px,
+      hsla(340, 100%, 63%, 30%) 10px 10px, hsla(340, 100%, 63%, 20%) 15px 15px,
+      hsla(340, 100%, 63%, 10%) 20px 20px;
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
 
-        .btn {
-          &__delete {
-            margin-right: 10px;
-          }
-        }
+  &__right-actions {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+  }
 
-        &__right-actions {
-          align-items: flex-end;
-          display: flex;
-          flex-direction: column;
-        }
+  &__delete {
+    margin-right: 10px;
+  }
 
-        &__favorite {
-          color: rgba(255, 64, 129, 100%);
-          margin-top: 20px;
+  &__favorite {
+    color: rgba(255, 64, 129, 100%);
+    margin-top: 20px;
+  }
 
-          .mat-icon {
-            font-size: 25px;
-            transition: 0.1s font-size linear;
+  &__favorite-icon {
+    font-size: 25px;
+    transition: 0.1s font-size linear;
 
-            &:active {
-              font-size: 30px;
-            }
-          }
-        }
-      }
+    &:active {
+      font-size: 30px;
     }
+  }
+
+  &__empty {
+    border: 2px solid hsl(0, 0%, 20%);
+    border-radius: 8px;
+    color: hsl(0, 0%, 50%);
+    font-size: 25px;
+    margin-top: 2em;
+    padding: 1em 3em;
   }
 
   &__mat-progress-bar {

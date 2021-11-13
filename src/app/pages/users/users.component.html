@@ -1,22 +1,23 @@
 <mat-progress-bar *ngIf="loading" class="users__mat-progress-bar" color="accent" mode="indeterminate">
 </mat-progress-bar>
 <main class="users">
-  <header class="users__header header">
-    <a class="header__linkedin" href="https://www.linkedin.com/in/antonio-eduardo-ribeiro-de-oliveira-9a7278127/"
+  <header class="users__header">
+    <a class="users__linkedin" href="https://www.linkedin.com/in/antonio-eduardo-ribeiro-de-oliveira-9a7278127/"
       target="_blank">My LinkedIn</a>
     <button mat-raised-button color="accent" (click)="navigateToUserConfig()">Create new user</button>
   </header>
-  <ul *ngIf="!loading" class="users__container container">
-    <li *ngFor="let user of users" class="container__card card">
-      <mat-card class="card__data data">
-        <div class="data__description">
+  <ul *ngIf="!loading" class="users__container">
+    <h1 *ngIf="!users.length" class="users__empty">No users found :(</h1>
+    <li *ngFor="let user of users" class="users__list">
+      <mat-card class="users__card">
+        <div class="users__description">
           <p>{{user.name}}</p>
           <p>{{user.email}}</p>
           <p>{{user.birthday | date}}</p>
         </div>
-        <section class="data__right-actions">
-          <div class="data__btn btn">
-            <button (click)="openDialog(user.id)" mat-fab color="accent" class="btn__delete"
+        <section class="users__right-actions">
+          <div class="users__btn">
+            <button (click)="openDialog(user.id)" mat-fab color="accent" class="users__delete"
               aria-label="Example icon button with a delete icon">
               <mat-icon>delete</mat-icon>
             </button>
@@ -25,8 +26,8 @@
               <mat-icon>edit</mat-icon>
             </button>
           </div>
-          <button class="data__favorite" (click)="like(user.id)" mat-icon-button>
-            <mat-icon>{{getLikedValue(user.id)}}</mat-icon>
+          <button class="users__favorite favorite--active" (click)="like(user.id)" mat-icon-button>
+            <mat-icon class="users__favorite-icon">{{getLikedValue(user.id)}}</mat-icon>
           </button>
         </section>
       </mat-card>

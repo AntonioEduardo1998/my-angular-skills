@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { UserCreationComponent } from './components/user-creation/user-creation.component';
-import { UserCreateComponent } from './pages/user-create/user-create.component';
-import { UserDeleteDialogComponent, UsersComponent } from './pages/users/users.component';
-import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { AppComponent } from 'src/app/app.component';
+import { UserCreationComponent } from 'src/app/components/user-creation/user-creation.component';
+import { UserCreateComponent } from 'src/app/pages/user-create/user-create.component';
+import { UserDeleteDialogComponent, UsersComponent } from 'src/app/pages/users/users.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [

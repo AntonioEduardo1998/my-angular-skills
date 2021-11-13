@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserCreateComponent } from './user-create.component';
+import { UserCreateComponent } from 'src/app/pages/user-create/user-create.component';
 
 describe('UserCreateComponent', () => {
   let component: UserCreateComponent;

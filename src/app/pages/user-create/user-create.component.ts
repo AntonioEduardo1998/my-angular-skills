@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import User from 'src/app/models/User';
-import { UserService } from 'src/app/services/user.service';
+import { getUserById } from 'src/app/utils/util';
 
 @Component({
   selector: 'mas-user-create',
@@ -16,7 +16,6 @@ export class UserCreateComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService,
     private snackBar: MatSnackBar,
   ) { }
 
@@ -32,7 +31,7 @@ export class UserCreateComponent implements OnInit {
   }
 
   private getUserById(id: string): void {
-    this.user = this.userService.getUserById(id);
+    this.user = getUserById(id);
   }
 
   public saveUser(user: User): void {
