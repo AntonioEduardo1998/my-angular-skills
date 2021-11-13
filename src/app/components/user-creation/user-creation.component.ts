@@ -5,7 +5,7 @@ import { v4 as uuid4 } from 'uuid';
 import User from 'src/app/models/User';
 
 @Component({
-  selector: 'app-user-creation',
+  selector: 'mas-user-creation',
   templateUrl: './user-creation.component.html',
   styleUrls: ['./user-creation.component.scss'],
 })
@@ -21,8 +21,6 @@ export class UserCreationComponent implements OnInit {
   @Input() public user: User;
 
   @Output() public userEmitter = new EventEmitter<User>();
-
-  constructor() { }
 
   ngOnInit(): void {
     if (this.user) {
@@ -41,6 +39,7 @@ export class UserCreationComponent implements OnInit {
         newUser.id = uuid4();
       } else {
         newUser.id = this.user.id;
+        newUser.liked = this.user.liked || false;
       }
       this.userEmitter.emit(newUser);
     }

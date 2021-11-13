@@ -6,7 +6,7 @@ import User from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-user-create',
+  selector: 'mas-user-create',
   templateUrl: './user-create.component.html',
   styleUrls: ['./user-create.component.scss'],
 })
@@ -17,7 +17,7 @@ export class UserCreateComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
-    private _snackBar: MatSnackBar,
+    private snackBar: MatSnackBar,
   ) { }
 
   public user: User;
@@ -26,7 +26,9 @@ export class UserCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = this.route.snapshot.params.id;
-    this.userId && this.getUserById(this.userId);
+    if (this.userId) {
+      this.getUserById(this.userId);
+    }
   }
 
   private getUserById(id: string): void {
@@ -48,11 +50,15 @@ export class UserCreateComponent implements OnInit {
     });
   }
 
-  public openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {
+  public openSnackBar(message: string, action: string): void {
+    this.snackBar.open(message, action, {
       duration: 2000,
       horizontalPosition: 'center',
       verticalPosition: 'top',
     });
+  }
+
+  public backToList(): void {
+    this.router.navigate(['']);
   }
 }

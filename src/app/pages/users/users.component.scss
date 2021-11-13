@@ -33,8 +33,9 @@
 
       .data {
         background-color: hsl(231, 15%, 30%);
-        box-shadow: rgba(255, 64, 129, 40%) 5px 5px, rgba(255, 64, 129, 30%) 10px 10px,
-          rgba(255, 64, 129, 20%) 15px 15px, rgba(255, 64, 129, 10%) 20px 20px;
+        box-shadow: rgba(255, 64, 129, 40%) 5px 5px,
+          rgba(255, 64, 129, 30%) 10px 10px, rgba(255, 64, 129, 20%) 15px 15px,
+          rgba(255, 64, 129, 10%) 20px 20px;
         color: hsl(0, 0%, 100%);
         display: flex;
         justify-content: space-between;
@@ -43,6 +44,26 @@
         .btn {
           &__delete {
             margin-right: 10px;
+          }
+        }
+
+        &__right-actions {
+          align-items: flex-end;
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__favorite {
+          color: rgba(255, 64, 129, 100%);
+          margin-top: 20px;
+
+          .mat-icon {
+            font-size: 25px;
+            transition: 0.1s font-size linear;
+
+            &:active {
+              font-size: 30px;
+            }
           }
         }
       }

@@ -14,18 +14,22 @@
           <p>{{user.email}}</p>
           <p>{{user.birthday | date}}</p>
         </div>
-        <div class="data__btn btn">
-          <button (click)="openDialog(user.id)" mat-fab color="accent" class="btn__delete"
-            aria-label="Example icon button with a delete icon">
-            <mat-icon>delete</mat-icon>
+        <section class="data__right-actions">
+          <div class="data__btn btn">
+            <button (click)="openDialog(user.id)" mat-fab color="accent" class="btn__delete"
+              aria-label="Example icon button with a delete icon">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button (click)="navigateToUserConfig(user.id)" class="btn__edit" mat-fab color="accent"
+              aria-label="Example icon button with a delete icon">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <button class="data__favorite" (click)="like(user.id)" mat-icon-button>
+            <mat-icon>{{getLikedValue(user.id)}}</mat-icon>
           </button>
-          <button (click)="navigateToUserConfig(user.id)" class="btn__edit" mat-fab color="accent"
-            aria-label="Example icon button with a delete icon">
-            <mat-icon>edit</mat-icon>
-          </button>
-        </div>
+        </section>
       </mat-card>
     </li>
   </ul>
 </main>
-<div id="vizContainer" style="display: flex; justify-content: center"></div>

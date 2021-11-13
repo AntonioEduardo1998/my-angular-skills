@@ -1,3 +1,6 @@
-<main class="user">
-  <app-user-creation *ngIf="!loading" (userEmitter)="saveUser($event)" [user]="user"></app-user-creation>
-</main>
+<header class="header">
+  <button mat-icon-button (click)="backToList()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</header>
+<mas-user-creation *ngIf="!loading" (userEmitter)="saveUser($event)" [user]="user"></mas-user-creation>
