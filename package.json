@@ -9,7 +9,7 @@
     "test:cov": "ng test --coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "clean": "rm -rf node_modules package-lock.json"
+    "clear": "rm -rf node_modules package-lock.json"
   },
   "private": true,
   "dependencies": {
