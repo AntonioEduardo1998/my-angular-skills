@@ -60,11 +60,11 @@ export class UsersComponent implements OnInit, OnDestroy {
   }
 
   public navigateToUserConfig(userId?: string): void {
-    // if (userId) {
-    //   this.router.navigate(['/user-create', userId]);
-    // } else {
-    //   this.router.navigate(['/user-create']);
-    // }
+    if (userId) {
+      this.router.navigate(['/user-create', userId]);
+    } else {
+      this.router.navigate(['/user-create']);
+    }
   }
 
   public deleteUserById(userId: string): void {

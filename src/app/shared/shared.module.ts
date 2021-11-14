@@ -12,6 +12,7 @@ import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [],
@@ -24,11 +25,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    BrowserAnimationsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
     MatProgressBarModule,
     MatIconModule,
+    MatDialogModule,
   ],
   exports: [
     MatCardModule,
