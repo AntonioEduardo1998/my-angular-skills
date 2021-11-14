@@ -1,4 +1,3 @@
-// eslint-disable-next-line max-classes-per-file
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -6,14 +5,9 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 
-import User from 'src/app/models/User';
-import { UserService } from 'src/app/services/user.service';
-
-@Component({
-  selector: 'mas-delete-dialog',
-  templateUrl: 'user-delete-dialog.html',
-})
-export class UserDeleteDialogComponent { }
+import { UserDeleteDialogComponent } from '@src/app/components/dialogs/user-delete-dialog';
+import User from '@src/app/models/User';
+import { UserService } from '@src/app/services/user.service';
 
 @Component({
   selector: 'mas-users',
@@ -66,11 +60,11 @@ export class UsersComponent implements OnInit, OnDestroy {
   }
 
   public navigateToUserConfig(userId?: string): void {
-    if (userId) {
-      this.router.navigate(['/user-create', userId]);
-    } else {
-      this.router.navigate(['/user-create']);
-    }
+    // if (userId) {
+    //   this.router.navigate(['/user-create', userId]);
+    // } else {
+    //   this.router.navigate(['/user-create']);
+    // }
   }
 
   public deleteUserById(userId: string): void {

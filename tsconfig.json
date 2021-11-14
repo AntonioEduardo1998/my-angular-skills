@@ -4,6 +4,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@src/*": [
+        "./src/*"
+      ],
+      "@root/*": [
+        "./*"
+      ]
+    },
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,

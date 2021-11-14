@@ -16,7 +16,7 @@ module.exports = {
   ],
   rules: {
     'alpha-value-notation': 'percentage',
-    'at-rule-disallowed-list': ['import', 'media'],
+    'at-rule-disallowed-list': ['media'],
     'color-format/format': {
       format: 'hsl',
     },

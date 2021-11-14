@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { pluck } from 'rxjs/operators';
 
-import User from 'src/app/models/User';
-import { environment } from 'src/environments/environment';
+import User from '@src/app/models/User';
+import { environment } from '@src/environments/environment';
 
 @Injectable({
   providedIn: 'root',

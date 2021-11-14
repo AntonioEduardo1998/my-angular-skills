@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserCreationComponent } from 'src/app/components/user-creation/user-creation.component';
+import { UserCreationComponent } from '@src/app/components/user-creation/user-creation.component';
+import { SharedModule } from '@src/app/shared/shared.module';
 
 describe('UserCreationComponent', () => {
   let component: UserCreationComponent;
@@ -9,6 +10,9 @@ describe('UserCreationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [UserCreationComponent],
+      imports: [
+        SharedModule,
+      ],
     })
       .compileComponents();
   });

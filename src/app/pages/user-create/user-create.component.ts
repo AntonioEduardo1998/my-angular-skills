@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import User from 'src/app/models/User';
-import { getUserById } from 'src/app/utils/util';
+import User from '@src/app/models/User';
+import { getUserById } from '@src/app/utils/util';
 
 @Component({
   selector: 'mas-user-create',

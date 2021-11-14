@@ -1,4 +1,4 @@
-@import "~@angular/material/theming";
+@import '~@angular/material/theming';
 
 @include mat-core();
 
@@ -33,10 +33,12 @@ html,
 body {
   height: 100%;
 }
+
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: hsl(231, 15%, 18%);
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  line-height: 1;
+  margin: 0;
 }
 
 html,
@@ -120,11 +122,11 @@ time,
 mark,
 audio,
 video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -141,24 +143,25 @@ nav,
 section {
   display: block;
 }
-body {
-  line-height: 1;
-}
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
