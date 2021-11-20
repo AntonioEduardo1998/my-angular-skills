@@ -19,9 +19,9 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   public loading = false;
 
-  private debounceSubject: Subject<string> = new Subject();
+  public debounceSubject: Subject<string> = new Subject();
 
-  private unsubscribe: Subject<void> = new Subject();
+  public unsubscribe: Subject<void> = new Subject();
 
   constructor(
     private userService: UserService,

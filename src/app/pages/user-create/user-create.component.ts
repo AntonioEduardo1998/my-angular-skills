@@ -35,7 +35,7 @@ export class UserCreateComponent implements OnInit {
   }
 
   public saveUser(user: User): void {
-    const users: User[] = JSON.parse(localStorage.getItem('@users'));
+    const users: User[] = JSON.parse(localStorage.getItem('@users')) || [];
     const userExist = users.findIndex((u) => u.id === user.id);
 
     if (userExist >= 0) {
