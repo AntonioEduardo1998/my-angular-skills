@@ -1,10 +1,9 @@
-version: '3.8' # specify docker-compose version
+version: '3.8'
 
-# Define the services/containers to be run
 services:
-  angular: # name of the first service
+  angular:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "4200:4200" # specify port forewarding
+      - "4200:4200"
